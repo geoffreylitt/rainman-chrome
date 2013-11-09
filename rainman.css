@@ -1,15 +1,124 @@
+/* Web font */
+
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(http://themes.googleusercontent.com/static/fonts/gentiumbookbasic/v3/IRFxB2matTxrjZt6a3FUnq6Rv-X66d7QWAwIQQ5u8Sc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Gentium Book Basic Bold'), local('GentiumBookBasic-Bold'), url(http://themes.googleusercontent.com/static/fonts/gentiumbookbasic/v3/T2vUYmWzlqUtgLYdlemGnbMeH342_rZq65bYQkKTmY2glnMp3_3A8V8Ai8YosRtX.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/PRmiXeptR36kaC0GEAetxvR_54zmj3SbGZQh3vCOwvY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+
+/* OUR CSS */
+
 body{
-  padding: 50px;
+  padding: 50px 100px 100px 100px;
+  background-color: #FFFBED;
+  border-top: solid 3px #368A32;
+  margin: 0;
 }
 
 #content{
   float: left;
   width: 600px;
   font-size: 20px;
+  margin-right: 80px;
+  font-family: "Gentium Book Basic", serif;
+}
+
+#content img{
+  width: 100%;
 }
 
 #sidebar{
   float: left;
-  width: 200px;
-  font-size: 20px;
+  width: 300px;
+}
+
+#hidden{
+  display: none; !important
+}
+
+.card{
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  color: #666666;
+  border-bottom: solid thin #E0D5AD;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+card:last-child{
+  border-bottom: none;
+}
+
+.card .wiki-link{
+  display: block;
+  color: #4F4F4E;
+  text-decoration: none;
+}
+
+.card .title{
+  display: block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #4F4F4E;
+  text-decoration: none;
+}
+
+.card.wiki .main-img{
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.card a.card-toggle{
+  display: block;
+  margin-top: 5px;
+  width: 100%;
+  font-size: 11px;
+  color: #666666;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card a.card-toggle:hover{
+  color: #666666;
+}
+
+.card a.card-toggle:active{
+  color: #666666;
+}
+
+.card a.card-toggle:visited{
+  color: #666666;
 }

@@ -1,7 +1,9 @@
-// find a way to preserve the old html here
+// store the page HTML in the DOM so we can access it from a script on the page
+var oldHTML = $("body").html();
 
 $.get(chrome.extension.getURL("/template.html"), function(data){
-  document.documentElement.innerHTML = data;
+  $(document.documentElement).html(data);
+  $("#hidden").text(oldHTML);
 
   var script_tag = function(filename){
     var script = document.createElement('script');
@@ -19,6 +21,7 @@ $.get(chrome.extension.getURL("/template.html"), function(data){
 
   $("body").append(stylesheet_tag("rainman.css"));
 
+  $("body").append(script_tag("js/lib/jquery-1.10.2.js"));
   $("body").append(script_tag("js/lib/angular.js"));
 
   // janky! later, figure out how to load once angular is loaded

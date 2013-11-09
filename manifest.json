@@ -25,6 +25,7 @@
     "template.html",
     "js/rainman.js",
     "js/lib/angular.js",
+    "js/lib/jquery-1.10.2.js",
     "rainman.css"
   ]
 
