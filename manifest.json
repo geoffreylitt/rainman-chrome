@@ -6,11 +6,21 @@
   "version": "0.1",
 
   "permissions": [
-    "http://rainmanio.herokuapp.com/api",
-    "http://rainman.io/api"
+    "activeTab"
   ],
 
+  "background": {
+    "scripts": ["js/injector.js"],
+    "persistent": false
+  },
+
   "browser_action": {
+    "default_title": "Read this page Rainman-style",
     "default_icon": "icon.png"
-  }
+  },
+
+  "web_accessible_resources": [
+    "template.html"
+  ]
+
 }
