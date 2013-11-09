@@ -9,11 +9,9 @@
       <div class="loading-screen" ng-show="pageState.loadState == 'loading'">
         <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
         <div class="loading-text">
-          Processing text...
-          <br>
-          Recognizing concepts...
-          <br>
-          Fetching data...
+          <div>Processing text...</div>
+          <div ng-show="pageState.loadStep >= 1">Recognizing concepts...</div>
+          <div ng-show="pageState.loadStep >= 2">Fetching data...</div>
         </div>
       </div>
       <div ng-show="pageState.loadState == 'success'">

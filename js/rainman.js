@@ -7,11 +7,16 @@ var oldHTML = $("#hidden").text() // extract from the DOM where we stored it
 // var apiURL = "http://0.0.0.0:5000/api";
 var apiURL = "http://rainmanio.herokuapp.com/api"
 
-rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
+rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce, $timeout) {
   $http.defaults.useXDomain = true;
   delete $http.defaults.headers.common['X-Requested-With'];
 
-  $scope.pageState = {loadState: "loading", contentLoaded: false, sidebarLoaded: false};
+  $scope.pageState = {
+    loadState: "loading",
+    contentLoaded: false,
+    sidebarLoaded: false,
+    loadStep: 0
+  };
 
   var loadResults = function(){
     var pageURL = document.URL.split("?")[0];
@@ -37,10 +42,16 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
       $scope.cards[i].expanded = false;
       $scope.cards[i].htmlID = "card" + i;
     }
+  }
 
+  var incrementLoadStep = function(){
+    $scope.pageState.loadStep += 1;
+    console.log($scope.pageState.loadStep);
   }
 
   loadResults();
+  $timeout(incrementLoadStep, 2000);
+  $timeout(incrementLoadStep, 4000);
 
 });
 
