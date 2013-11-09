@@ -9,7 +9,11 @@
       <div class="loading-screen" ng-show="pageState.loadState == 'loading'">
         <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
         <div class="loading-text">
-          Identifying key concepts...please wait.
+          Processing text...
+          <br>
+          Recognizing concepts...
+          <br>
+          Fetching data...
         </div>
       </div>
       <div ng-show="pageState.loadState == 'success'">
@@ -17,7 +21,7 @@
         </div>
         <div id="sidebar" ng-class="pageState.sidebarLoaded ? 'animated fadeIn' : ''">
           <div id="{{card.htmlID}}" class="card wiki" ng-repeat="card in cards">
-            <a target="_blank" ng-href="{{card.url}}">
+            <a target="_blank" class="title-link" ng-href="{{card.url}}">
               <div class="title">{{card.title}}</div>
               <img class="main-img" ng-src="{{card.images[0]}}" />
             </a>

@@ -136,15 +136,23 @@ card:last-child{
   text-decoration: none;
 }
 
-.card .title{
+.loading-text {
+  font-family: "Open Sans", sans-serif;
+}
+
+.card .title, .loading-text {
   display: block;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 10px;
-  color: #BBBBA8;
+  color: #838375;
   text-decoration: none;
   text-align: left;
+}
+
+.card a.title-link, .card a.title-link:active, .card a.title-link:hover, .card a.title-link:focus, .card a.title-link:visited {
+  text-decoration: none;
 }
 
 .card.wiki .main-img{
