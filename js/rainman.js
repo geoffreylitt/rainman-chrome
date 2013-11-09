@@ -32,6 +32,7 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
     for(var i = 0; i < $scope.cards.length; i++){
       $scope.cards[i].shortSummary = data.cards[i].summary.substring(0, 500) + "...";
       $scope.cards[i].expanded = false;
+      $scope.cards[i].htmlID = "card" + i;
     }
 
   }

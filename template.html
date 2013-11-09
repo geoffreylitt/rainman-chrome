@@ -1,14 +1,15 @@
 <html ng-app="rainmanApp">
   <body ng-controller="RainmanCtrl" ng-cloak>
     <div ng-show="pageState.loadState == 'loading'">
-      Loading...
+      <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
+      Identifying key concepts...please wait.
     </div>
     <div ng-show="pageState.loadState == 'success'">
       <div id="content" ng-bind-html="article">
       </div>
       <div id="sidebar">
-        <div class="card wiki" ng-repeat="card in cards">
-          <a class="wiki-link" target="_blank" ng-href="{{card.url}}">
+        <div id="{{card.htmlID}}" class="card wiki" ng-repeat="card in cards">
+          <a target="_blank" ng-href="{{card.url}}">
             <div class="title">{{card.title}}</div>
             <img class="main-img" ng-src="{{card.images[0]}}" />
           </a>
