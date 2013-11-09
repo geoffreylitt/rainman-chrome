@@ -1,0 +1,15 @@
+body{
+  padding: 50px;
+}
+
+#content{
+  float: left;
+  width: 600px;
+  font-size: 20px;
+}
+
+#sidebar{
+  float: left;
+  width: 200px;
+  font-size: 20px;
+}

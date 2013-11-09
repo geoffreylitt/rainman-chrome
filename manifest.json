@@ -6,7 +6,9 @@
   "version": "0.1",
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "http://rainmanio.herokuapp.com/api",
+    "http://rainman.io/api"
   ],
 
   "background": {
@@ -22,7 +24,8 @@
   "web_accessible_resources": [
     "template.html",
     "js/rainman.js",
-    "js/lib/angular.js"
+    "js/lib/angular.js",
+    "rainman.css"
   ]
 
 }

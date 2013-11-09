@@ -1,8 +1,16 @@
 <html ng-app="rainmanApp">
-  <body ng-controller="RainmanCtrl">
-    Hello world!
-    {{2+2}}
-    {{data.message}}
-
+  <body ng-controller="RainmanCtrl" ng-cloak>
+    <h1>Rainman</h1>
+    <div ng-show="pageState.loading">
+      Loading...
+    </div>
+    <div ng-hide="pageState.loading">
+      <div id="content">
+        Content
+      </div>
+      <div id="sidebar">
+        Sidebar
+      </div>
+    </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-var original_html = document.documentElement.innerHTML;
+// find a way to preserve the old html here
 
 $.get(chrome.extension.getURL("/template.html"), function(data){
   document.documentElement.innerHTML = data;
@@ -8,6 +8,16 @@ $.get(chrome.extension.getURL("/template.html"), function(data){
     script.src = chrome.extension.getURL(filename);
     return script;
   }
+
+  var stylesheet_tag = function(filename){
+    var link = document.createElement('link');
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = chrome.extension.getURL(filename);
+    return link;
+  }
+
+  $("body").append(stylesheet_tag("rainman.css"));
 
   $("body").append(script_tag("js/lib/angular.js"));
 
