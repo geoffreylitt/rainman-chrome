@@ -1,29 +1,36 @@
 <html ng-app="rainmanApp">
   <body ng-controller="RainmanCtrl" ng-cloak>
-    <div class="loading-screen" ng-show="pageState.loadState == 'loading'">
-      <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
-      <div class="loading-text">
-        Identifying key concepts...please wait.
-      </div>
+    <div class="logo">
+      <a href="http://rainmanio.herokuapp.com">
+        <img src="http://geoffreylitt.com/files/rainman/rainman-500.png" />
+      </a>
     </div>
-    <div ng-show="pageState.loadState == 'success'">
-      <div id="content" ng-class="pageState.contentLoaded ? 'animated fadeIn' : ''" ng-bind-html="article">
+    <div id="main">
+      <div class="loading-screen" ng-show="pageState.loadState == 'loading'">
+        <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
+        <div class="loading-text">
+          Identifying key concepts...please wait.
+        </div>
       </div>
-      <div id="sidebar" ng-class="pageState.sidebarLoaded ? 'animated fadeIn' : ''">
-        <div id="{{card.htmlID}}" class="card wiki" ng-repeat="card in cards">
-          <a target="_blank" ng-href="{{card.url}}">
-            <div class="title">{{card.title}}</div>
-            <img class="main-img" ng-src="{{card.images[0]}}" />
-          </a>
-          <div ng-show="card.expanded == false" class="summary">
-            {{card.shortSummary}}
-            <a href="" ng-click="card.expanded = true" class="card-toggle">See more</a>
-          </div>
-          <div ng-show="card.expanded == true" class="summary">
-            {{card.summary}}
-            <a href="" ng-click="card.expanded = false" class="card-toggle">See less</a>
-          </div>
+      <div ng-show="pageState.loadState == 'success'">
+        <div id="content" ng-class="pageState.contentLoaded ? 'animated fadeIn' : ''" ng-bind-html="article">
+        </div>
+        <div id="sidebar" ng-class="pageState.sidebarLoaded ? 'animated fadeIn' : ''">
+          <div id="{{card.htmlID}}" class="card wiki" ng-repeat="card in cards">
+            <a target="_blank" ng-href="{{card.url}}">
+              <div class="title">{{card.title}}</div>
+              <img class="main-img" ng-src="{{card.images[0]}}" />
+            </a>
+            <div ng-show="card.expanded == false" class="summary">
+              {{card.shortSummary}}
+              <a href="" ng-click="card.expanded = true" class="card-toggle">See more</a>
+            </div>
+            <div ng-show="card.expanded == true" class="summary">
+              {{card.summary}}
+              <a href="" ng-click="card.expanded = false" class="card-toggle">See less</a>
+            </div>
 
+          </div>
         </div>
       </div>
     </div>

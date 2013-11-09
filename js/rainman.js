@@ -19,8 +19,8 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
     success(function(data, status) {
       processResults(data);
       $scope.pageState.loadState = "success";
-      $scope.pageState.contentLoaded = "success";
-      $scope.pageState.sidebarLoaded = "success";
+      $scope.pageState.contentLoaded = true;
+      $scope.pageState.sidebarLoaded = true;
     }).
     error(function(data, status){
       $scope.pageState.loadState = "error";
