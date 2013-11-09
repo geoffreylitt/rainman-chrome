@@ -1,13 +1,15 @@
 <html ng-app="rainmanApp">
   <body ng-controller="RainmanCtrl" ng-cloak>
-    <div ng-show="pageState.loadState == 'loading'">
+    <div class="loading-screen" ng-show="pageState.loadState == 'loading'">
       <img class="loading" src="http://geoffreylitt.com/files/rainman/loading.gif" />
-      Identifying key concepts...please wait.
+      <div class="loading-text">
+        Identifying key concepts...please wait.
+      </div>
     </div>
     <div ng-show="pageState.loadState == 'success'">
-      <div id="content" ng-bind-html="article">
+      <div id="content" ng-class="pageState.contentLoaded ? 'animated fadeIn' : ''" ng-bind-html="article">
       </div>
-      <div id="sidebar">
+      <div id="sidebar" ng-class="pageState.sidebarLoaded ? 'animated fadeIn' : ''">
         <div id="{{card.htmlID}}" class="card wiki" ng-repeat="card in cards">
           <a target="_blank" ng-href="{{card.url}}">
             <div class="title">{{card.title}}</div>

@@ -11,7 +11,7 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
   $http.defaults.useXDomain = true;
   delete $http.defaults.headers.common['X-Requested-With'];
 
-  $scope.pageState = {loadState: "loading"};
+  $scope.pageState = {loadState: "loading", contentLoaded: false, sidebarLoaded: false};
 
   var loadResults = function(){
     var pageURL = document.URL.split("?")[0];
@@ -19,6 +19,8 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
     success(function(data, status) {
       processResults(data);
       $scope.pageState.loadState = "success";
+      $scope.pageState.contentLoaded = "success";
+      $scope.pageState.sidebarLoaded = "success";
     }).
     error(function(data, status){
       $scope.pageState.loadState = "error";
@@ -30,7 +32,8 @@ rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce) {
     $scope.cards = data.cards;
 
     for(var i = 0; i < $scope.cards.length; i++){
-      $scope.cards[i].shortSummary = data.cards[i].summary.substring(0, 500) + "...";
+      $scope.cards[i].shortSummary = data.cards[i].summary.substring(0, 400) + "...";
+      $scope.cards[i].summary = data.cards[i].summary.substring(0, 1000) + "...";
       $scope.cards[i].expanded = false;
       $scope.cards[i].htmlID = "card" + i;
     }

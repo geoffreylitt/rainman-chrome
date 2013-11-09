@@ -67,6 +67,23 @@ body{
   display: none; !important
 }
 
+.loading{
+  width: 200px;
+  margin: auto;
+}
+
+img.loading{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.loading .loading-text{
+  display: block;
+  text-align: center;
+  font-size: 22px;
+}
+
 .card{
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
