@@ -42,7 +42,7 @@
 body{
   padding: 50px 100px 100px 100px;
   background-color: #FFFBED;
-  border-top: solid 3px #368A32;
+  border-top: solid 5px #368A32;
   margin: 0;
 }
 
@@ -71,7 +71,7 @@ body{
   font-size: 12px;
   font-family: "Open Sans", sans-serif;
   color: #666666;
-  border-bottom: solid thin #E0D5AD;
+  border-bottom: solid 2px #EEEEDD;
   padding-bottom: 15px;
   margin-bottom: 20px;
 }
@@ -81,6 +81,7 @@ card:last-child{
 }
 
 .card .wiki-link{
+  margin-bottom: 10px;
   display: block;
   color: #4F4F4E;
   text-decoration: none;
@@ -91,34 +92,42 @@ card:last-child{
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
-  margin-bottom: 5px;
-  color: #4F4F4E;
+  margin-bottom: 10px;
+  color: #BBBBA8;
   text-decoration: none;
+  text-align: left;
 }
 
 .card.wiki .main-img{
   width: 100%;
   margin-bottom: 5px;
+  border-radius: 4px;
 }
 
 .card a.card-toggle{
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   width: 100%;
   font-size: 11px;
-  color: #666666;
+  font-weight: bold;
+  color: #BBBBA8;;
   text-transform: uppercase;
   text-align: center;
 }
 
 .card a.card-toggle:hover{
-  color: #666666;
+  color: #BBBBA8;
 }
 
 .card a.card-toggle:active{
-  color: #666666;
+  color: #BBBBA8;
 }
 
 .card a.card-toggle:visited{
-  color: #666666;
+  color: #BBBBA8;
+}
+
+.credit {
+  font-size: 14px;
+  color: #BBBBA8;
 }
