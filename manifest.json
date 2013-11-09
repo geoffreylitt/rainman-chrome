@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Rainman",
+  "description": "Beautiful context for Internet reading",
+  "version": "0.1",
+
+  "permissions": [
+    "http://rainmanio.herokuapp.com/api",
+    "http://rainman.io/api"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  }
+}
