@@ -1,5 +1,9 @@
-var original_html = document.documentElement.innerHTML;
+'use strict';
 
-$.get(chrome.extension.getURL("/template.html"), function(data){
-  document.documentElement.innerHTML = data;
+var rainmanApp = angular.module('rainmanApp', []);
+
+rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope) {
+  $scope.data = {message: "test"};
 });
+
+angular.bootstrap(document, ['rainmanApp']);

@@ -10,7 +10,7 @@
   ],
 
   "background": {
-    "scripts": ["js/injector.js"],
+    "scripts": ["js/button_handler.js"],
     "persistent": false
   },
 
@@ -20,7 +20,9 @@
   },
 
   "web_accessible_resources": [
-    "template.html"
+    "template.html",
+    "js/rainman.js",
+    "js/lib/angular.js"
   ]
 
 }
