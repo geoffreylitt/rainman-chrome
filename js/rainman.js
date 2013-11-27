@@ -4,8 +4,8 @@ var rainmanApp = angular.module('rainmanApp', []);
 
 var oldHTML = $("#hidden").text() // extract from the DOM where we stored it
 
-// var apiURL = "http://0.0.0.0:5000/api";
-var apiURL = "http://rainmanio.herokuapp.com/api"
+// var apiURL = "http://0.0.0.0:5000/api/article";
+var apiURL = "http://rainmanio.herokuapp.com/api/article"
 
 rainmanApp.controller('RainmanCtrl', function RainmanCtrl($scope, $http, $sce, $timeout) {
   $http.defaults.useXDomain = true;
